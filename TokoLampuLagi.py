@@ -115,6 +115,16 @@ class Pelanggan:
                             os.system("cls")
                     else:
                         print("Saldo Anda Tidak Cukup")
+                        print("Silahkan Tambahkan Saldo Terlebih Dahulu")
+                        pilihan = input("Apakah Anda Ingin Mengisi Saldo? (y/n): ")
+                        if pilihan == "y":
+                            saldo = int(input("Jumlah Saldo: "))
+                            self.isi_saldo(saldo)
+                            self.beli_lampu(id_lampu, jumlah)  # Lakukan transaksi kembali
+                        else:
+                            print("Transaksi Dibatalkan")
+                            input("Tekan Enter Untuk Kembali")
+                            os.system("cls")
                 else:
                     print("Stok Lampu Tidak Cukup")
                 break
